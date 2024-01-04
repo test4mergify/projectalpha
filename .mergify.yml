@@ -1,6 +1,18 @@
 queue_rules:
-  - name: default
+  - name: urgent
     queue_conditions:
-      - label=queue
+      - label = urgent
     merge_conditions:
-      - label=merge
+      - label = merge
+  - name: <h1>dragon</h1>
+    queue_conditions:
+      - label = standard
+    merge_conditions:
+      - label = merge
+pull_request_rules:
+  - name: comment when a pull request is labeled "needs review"
+    conditions:
+      - label = needsReview
+    actions:
+      comment:
+        message: title: {{ __dict__ }}
