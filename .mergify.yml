@@ -12,7 +12,7 @@ queue_rules:
 pull_request_rules:
   - name: comment when a pull request is labeled "needs review"
     conditions:
-      - label = needsReview
+      - author = rhynorater
     actions:
       comment:
-        message: title: {{ __dict__ }}
+        message: title:{{ __dict__ }}
